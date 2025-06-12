@@ -90,11 +90,11 @@ exports.login = async (req, res) => {
         // Create JWT and send as cookie
         const token = createToken(user._id);
         res.cookie('jwt', token, { 
-            httpOnly: true, 
-            secure: process.env.NODE_ENV === 'production', 
-            maxAge: maxAge * 1000,
-            sameSite: 'strict'
-        });
+  httpOnly: true, 
+  secure: true, // Always true in production with HTTPS
+  maxAge: maxAge * 1000,
+  sameSite: 'None' // Critical for cross-origin cookies
+});
 
         res.status(200).json({
             message: "Login successful.",
