@@ -52,7 +52,8 @@ app.use(cookieParser());
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
-  'https://indic-frontend.onrender.com' // Replace this with your actual frontend deploy URL
+  'https://indic-frontend.onrender.com',
+  'https://indic.in.net' // Replace this with your actual frontend deploy URL
 ];
 
 app.use(cors({
